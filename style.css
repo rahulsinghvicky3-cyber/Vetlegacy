@@ -59,3 +59,39 @@ padding: 10px;
 .card p {
 padding: 0 10px 10px;
 }
+.dropdown {
+display: inline-block;
+position: relative;
+}
+
+.dropbtn {
+background: none;
+color: white;
+border: none;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background: black;
+min-width: 160px;
+z-index: 1;
+}
+
+.dropdown-content a {
+color: white;
+padding: 10px;
+display: block;
+text-decoration: none;
+}
+
+.dropdown-content a:hover {
+background: #333;
+}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
