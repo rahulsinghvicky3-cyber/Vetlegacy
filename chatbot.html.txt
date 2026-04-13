@@ -31,3 +31,7 @@ function answer() {
 
 </body>
 </html>
+<input type="text" id="userInput" placeholder="Ask something..." />
+<button onclick="sendMessage()">Send</button>
+
+<div id="chatBox"></div>
