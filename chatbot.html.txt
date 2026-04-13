@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Ask Vet AI 🤖</h1>
+
+<input type="text" id="question" placeholder="Ask anything...">
+<button onclick="answer()">Ask</button>
+
+<p id="response"></p>
+
+<script>
+function answer() {
+  let q = document.getElementById("question").value;
+
+  let reply = "";
+
+  if(q.toLowerCase().includes("nutrition")){
+    reply = "Animal nutrition involves feed, digestion, and metabolism.";
+  }
+  else if(q.toLowerCase().includes("physiology")){
+    reply = "Physiology studies body functions of animals.";
+  }
+  else{
+    reply = "This is a demo AI. Real AI coming soon!";
+  }
+
+  document.getElementById("response").innerText = reply;
+}
+</script>
+
+</body>
+</html>
