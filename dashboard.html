@@ -1,6 +1,91 @@
-<h1>Welcome to VetLegacy Dashboard</h1>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VetLegacy Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 
-<ul>
-    <li><a href="notes.html">Notes</a></li>
-    <li><a href="quiz.html">Quiz</a></li>
-</ul>
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="nav-container">
+        <h2 class="logo">VetLegacy 🐾</h2>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="notes.html">Notes</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="test.html">Test Series</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<!-- DASHBOARD -->
+<section class="dashboard fade-up">
+
+    <h1>Welcome to Your Dashboard</h1>
+    <p>Track your learning and access resources</p>
+
+    <div class="dashboard-grid">
+
+        <div class="dashboard-card">
+            <i class="fas fa-book icon"></i>
+            <h3>Notes</h3>
+            <p>Access all study materials</p>
+            <a href="notes.html" class="btn">Open</a>
+        </div>
+
+        <div class="dashboard-card">
+            <i class="fas fa-brain icon"></i>
+            <h3>Quiz</h3>
+            <p>Practice MCQs and improve</p>
+            <a href="quiz.html" class="btn">Start</a>
+        </div>
+
+        <div class="dashboard-card">
+            <i class="fas fa-chart-line icon"></i>
+            <h3>Test Series</h3>
+            <p>Take full-length mock tests</p>
+            <a href="test.html" class="btn">Go</a>
+        </div>
+
+        <div class="dashboard-card">
+            <i class="fas fa-user icon"></i>
+            <h3>Profile</h3>
+            <p>Track your progress (coming soon)</p>
+            <button class="btn">View</button>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 VetLegacy</p>
+</footer>
+
+<!-- ANIMATION -->
+<script>
+const elements = document.querySelectorAll('.fade-up');
+
+window.addEventListener('scroll', () => {
+    elements.forEach(el => {
+        const position = el.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+
+        if(position < screenHeight - 100){
+            el.classList.add('active');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
