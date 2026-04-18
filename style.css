@@ -41,4 +41,30 @@ nav a {
   padding: 20px;
   margin: 10px;
   border-radius: 10px;
+}.hero {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.5;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #22c55e;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
 }
