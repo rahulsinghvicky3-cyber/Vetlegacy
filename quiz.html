@@ -1,34 +1,33 @@
-<h1>Daily Quiz</h1>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VetLegacy Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-<p id="question">Loading...</p>
+<body>
 
-<button onclick="checkAnswer(0)">A</button>
-<button onclick="checkAnswer(1)">B</button>
-<button onclick="checkAnswer(2)">C</button>
-<button onclick="checkAnswer(3)">D</button>
+<header class="navbar">
+    <h2>VetLegacy Quiz 🧠</h2>
+</header>
 
-<p id="result"></p>
+<section class="quiz-container">
 
-<script>
+    <h2 id="question">Question here</h2>
 
-const quiz = [
-{
-    q: "Which nerve is blocked in paravertebral anesthesia?",
-    options: ["T10", "T13-L2", "L4", "S1"],
-    answer: 1
-}
-];
+    <div id="options" class="options"></div>
 
-let current = 0;
+    <button id="nextBtn" class="btn" onclick="nextQuestion()" style="display:none;">
+        Next Question
+    </button>
 
-document.getElementById("question").innerText = quiz[0].q;
+    <p id="score"></p>
 
-function checkAnswer(i){
-    if(i === quiz[current].answer){
-        document.getElementById("result").innerText = "✅ Correct";
-    } else {
-        document.getElementById("result").innerText = "❌ Wrong";
-    }
-}
+</section>
 
-</script>
+<script src="quiz.js"></script>
+
+</body>
+</html>
