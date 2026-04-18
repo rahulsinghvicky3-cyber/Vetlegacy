@@ -130,4 +130,30 @@ footer {
     color: white;
     padding: 20px;
     text-align: center;
-} 
+} .icon {
+    font-size: 30px;
+    color: #22c55e;
+    margin-bottom: 10px;
+}
+.feature-card {
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}@media (max-width: 768px) {
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-hero h1 {
+        font-size: 24px;
+    }
+
+    .about-content {
+        padding: 20px;
+    }
+
+}
