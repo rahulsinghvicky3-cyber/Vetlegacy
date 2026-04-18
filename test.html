@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,16 +9,29 @@
 
 <body>
 
+<!-- NAVBAR -->
 <header class="navbar">
-    <h2>VetLegacy Test Series 🧠</h2>
+    <div class="nav-container">
+        <h2 class="logo">VetLegacy 🐾</h2>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="notes.html">Notes</a>
+            <a href="test.html">Test Series</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
 </header>
 
-<section class="test-hero">
+<!-- HERO -->
+<section class="test-hero fade-up">
     <h1>Test Series for Veterinary Exams</h1>
     <p>Practice. Analyze. Improve.</p>
 </section>
 
-<section class="test-section">
+<!-- FREE TESTS -->
+<section class="test-section fade-up">
 
     <h2>🆓 Free Mock Tests</h2>
 
@@ -40,7 +53,8 @@
 
 </section>
 
-<section class="test-section premium">
+<!-- PAID TEST -->
+<section class="test-section premium fade-up">
 
     <h2>💰 Paid VO Test Series</h2>
 
@@ -49,21 +63,44 @@
         <div class="test-card premium-card">
             <h3>VO Full Test Series</h3>
             <p>50+ Tests | Detailed Analysis | ARS Level</p>
+
             <button onclick="buyCourse()" class="btn">Unlock Now</button>
+
+            <p style="margin-top:10px; font-size:14px; color:gray;">
+                🔒 Premium Content
+            </p>
         </div>
 
     </div>
 
 </section>
 
+<!-- FOOTER -->
 <footer>
     <p>© 2026 VetLegacy</p>
 </footer>
 
+<!-- SCRIPT -->
 <script>
 function buyCourse(){
-    alert("Redirecting to payment (Razorpay/Stripe later)");
+    alert("🚧 Payment system coming soon!");
 }
+</script>
+
+<!-- ANIMATION SCRIPT -->
+<script>
+const elements = document.querySelectorAll('.fade-up');
+
+window.addEventListener('scroll', () => {
+    elements.forEach(el => {
+        const position = el.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+
+        if(position < screenHeight - 100){
+            el.classList.add('active');
+        }
+    });
+});
 </script>
 
 </body>
