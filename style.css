@@ -193,4 +193,38 @@ footer {
     .hero p {
         font-size: 16px;
     }
+}.quiz-container {
+    max-width: 600px;
+    margin: 80px auto;
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.options button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border: none;
+    background: #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.options button:hover {
+    background: #cbd5f5;
+}
+
+.correct {
+    background: #22c55e !important;
+    color: white;
+}
+
+.wrong {
+    background: #ef4444 !important;
+    color: white;
 }
