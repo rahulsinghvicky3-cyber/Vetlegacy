@@ -1,4 +1,4 @@
-let quizData = {
+ let quizData = {
     easy: [
         {
             question: "Normal body temperature of cow?",
@@ -43,7 +43,7 @@ difficultyEl.addEventListener("change", () => {
     loadQuestion();
 });
 
-function startTimer(){
+function startTimer() {
     time = 15;
     timerEl.innerText = "⏱ " + time;
 
@@ -51,14 +51,14 @@ function startTimer(){
         time--;
         timerEl.innerText = "⏱ " + time;
 
-        if(time === 0){
+        if (time === 0) {
             clearInterval(timer);
-            nextQuestion();
+            autoNext();
         }
     }, 1000);
 }
 
-function loadQuestion(){
+function loadQuestion() {
     clearInterval(timer);
     startTimer();
 
@@ -76,7 +76,7 @@ function loadQuestion(){
     nextBtn.style.display = "none";
 }
 
-function checkAnswer(i, btn){
+function checkAnswer(i, btn) {
     clearInterval(timer);
 
     const correct = currentQuiz[current].correct;
@@ -84,7 +84,7 @@ function checkAnswer(i, btn){
 
     buttons.forEach(b => b.disabled = true);
 
-    if(i === correct){
+    if (i === correct) {
         btn.classList.add("correct");
         score++;
     } else {
@@ -95,30 +95,65 @@ function checkAnswer(i, btn){
     nextBtn.style.display = "block";
 }
 
-function nextQuestion(){
+function autoNext() {
+    const buttons = optionsEl.querySelectorAll("button");
+    const correct = currentQuiz[current].correct;
+
+    buttons.forEach(b => b.disabled = true);
+    if (buttons[correct]) {
+        buttons[correct].classList.add("correct");
+    }
+
+    nextBtn.style.display = "block";
+}
+
+function nextQuestion() {
     current++;
 
-    if(current < currentQuiz.length){
+    if (current < currentQuiz.length) {
         loadQuestion();
     } else {
-        questionEl.innerText = "Quiz Completed 🎉";
-        optionsEl.innerHTML = "";
-        nextBtn.style.display = "none";
-        scoreEl.innerText = "Score: " + score;
+        finishQuiz();
     }
 }
 
-loadQuestion();
-function saveScore(){
+function finishQuiz() {
+    clearInterval(timer);
+
+    questionEl.innerText = "Quiz Completed 🎉";
+    optionsEl.innerHTML = "";
+    nextBtn.style.display = "none";
+
+    scoreEl.innerHTML = `
+        Your Score: ${score}/${currentQuiz.length} <br><br>
+        <button onclick="restartQuiz()" class="btn">Restart Quiz</button>
+    `;
+
+    saveScore();
+    showLeaderboard();
+}
+
+function restartQuiz() {
+    current = 0;
+    score = 0;
+    loadQuestion();
+    scoreEl.innerHTML = "";
+}
+
+/* LEADERBOARD */
+function saveScore() {
     let scores = JSON.parse(localStorage.getItem("scores")) || [];
     scores.push(score);
     localStorage.setItem("scores", JSON.stringify(scores));
 }
 
-function showLeaderboard(){
+function showLeaderboard() {
     let scores = JSON.parse(localStorage.getItem("scores")) || [];
-    scores.sort((a,b) => b-a);
+    scores.sort((a, b) => b - a);
 
-    let top = scores.slice(0,5);
-    scoreEl.innerHTML += "<br>Top Scores: " + top.join(", ");
+    let top = scores.slice(0, 5);
+
+    scoreEl.innerHTML += `<br>🏆 Top Scores: ${top.join(", ")}`;
 }
+
+loadQuestion();
