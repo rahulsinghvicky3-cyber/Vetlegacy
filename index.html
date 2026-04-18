@@ -1,65 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <title>VetLegacy</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VetLegacy</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
-<header>
-  <h1>VetLegacy 🐾</h1>
-  <p> A Platform to Learn, Understand, and Master Veterinary Science</p>
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="nav-container">
+        <h2 class="logo">VetLegacy 🐾</h2>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="about.html">About</a>
+            <a href="notes.html">Notes</a>
+            <a href="#">Videos</a>
+            <a href="#">Test Series</a>
+            <a href="#">Courses</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
 </header>
 
-<nav>
-  <a href="notes.html">Home</a>
-    <a href="notes.html">About us</a>
-  <a href="notes.html">Notes</a
-  <a href="videos.html">Videos</a>
-    <a href="videos.html">Test Series</a>
-  <a href="chatbot.html">Courses</a>
-    <a href="chatbot.html">Contact</a>
+<!-- HERO -->
+<section class="hero fade-up">
+    <h1>Where Veterinary Knowledge Becomes Understanding</h1>
 
-</nav>
+    <p>
+        Stop memorizing. Start understanding.  
+        Concept-based learning + ARS-level preparation.
+    </p>
 
+    <a href="notes.html" class="btn">Start Learning</a>
 </section>
 
-</body>
-</html>
-<section class="hero">
-  <section class="features">
+<!-- FEATURES -->
+<section class="features fade-up">
 
     <h2>Why VetLegacy?</h2>
 
-    <div class="feature-box">
-        <h3>📚 Concept-Based Learning</h3>
-        <p>Understand deeply, not memorize blindly</p>
-    </div>
+    <div class="feature-grid">
 
-    <div class="feature-box">
-        <h3>🧠 Designed for Excellence</h3>
-    </div>
+        <div class="feature-card">
+            <i class="fas fa-book icon"></i>
+            <h3>Concept-Based Learning</h3>
+            <p>Understand deeply, not memorize blindly.</p>
+        </div>
 
-    <div class="feature-box">
-        <h3>⚡ Daily Practice</h3>
-        <p>MCQs + PYQs to sharpen your edge.</p>
+        <div class="feature-card">
+            <i class="fas fa-brain icon"></i>
+            <h3>Designed for Excellence</h3>
+            <p>Write like a topper. Think like a vet.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fas fa-bolt icon"></i>
+            <h3>Daily Practice</h3>
+            <p>MCQs + PYQs to sharpen your edge.</p>
+        </div>
+
     </div>
 
 </section>
-  <h2>START LEARNING</h2>
-  <p>BVSc | MVSc | PhD Resources|VO PREP</p>
-  <a href="notes.html">
-    <button style="padding:10px 20px; border:none; background:white; color:#1abc9c; border-radius:5px;">
-      Start Learning
-    </button>
-  </a>
+
+<!-- CTA -->
+<section class="cta fade-up">
+    <h2>START LEARNING</h2>
+    <p>BVSc | MVSc | PhD Resources | VO PREP</p>
+
+    <a href="notes.html" class="btn">Start Learning</a>
 </section>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<a href="about.html">About</a>
-<div class="feature-card">
-    <i class="fas fa-book icon"></i>
-    <h3>Concept-Based Notes</h3>
-    <p>Clear, structured notes for deep understanding.</p>
-</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 VetLegacy</p>
+</footer>
+
+<!-- ANIMATION SCRIPT -->
+<script>
+const elements = document.querySelectorAll('.fade-up');
+
+window.addEventListener('scroll', () => {
+    elements.forEach(el => {
+        const position = el.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+
+        if(position < screenHeight - 100){
+            el.classList.add('active');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
