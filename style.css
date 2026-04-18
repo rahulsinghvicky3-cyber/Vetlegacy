@@ -279,3 +279,68 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* CONTACT HERO */
+.contact-hero {
+    background: #cbd5e1;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.contact-hero h1 {
+    font-size: 40px;
+}
+
+.contact-hero p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* CONTACT GRID */
+.contact-section {
+    padding: 60px 20px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.contact-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+}
+
+/* BUTTON COLORS */
+.whatsapp {
+    background: #22c55e;
+}
+
+.telegram {
+    background: #0284c7;
+}
+
+.email {
+    background: #6366f1;
+}
+
+.instagram {
+    background: linear-gradient(45deg, #f43f5e, #9333ea);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
