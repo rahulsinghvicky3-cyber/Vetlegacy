@@ -1,75 +1,7 @@
+/* RESET */
 body {
-  font-family: Arial;
-  margin: 0;
-  background: #f4f4f4;
-}
-
-header {
-  background: #2c3e50;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-
-nav {
-  background: #34495e;
-  padding: 10px;
-  text-align: center;
-}
-
-nav a {
-  color: white;
-  margin: 10px;
-  text-decoration: none;
-}
-
-.hero {
-  padding: 50px;
-  text-align: center;
-  background: #1abc9c;
-  color: white;
-}
-
-.features {
-  display: flex;
-  justify-content: center;
-  margin: 20px;
-}
-
-.card {
-  background: white;
-  padding: 20px;
-  margin: 10px;
-  border-radius: 10px;
-}.hero {
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    color: white;
-    padding: 100px 20px;
-}
-
-.hero h1 {
-    font-size: 40px;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 18px;
-    max-width: 600px;
-    margin: auto;
-    line-height: 1.5;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: #22c55e;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-}body {
-    font-family: Arial;
     margin: 0;
+    font-family: Arial, sans-serif;
     background: #f8fafc;
 }
 
@@ -78,30 +10,67 @@ nav a {
     background: #0f172a;
     color: white;
     padding: 15px 30px;
-}
-
-/* HERO */
-.about-hero {
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    color: white;
-    padding: 80px 20px;
     text-align: center;
 }
 
-.about-hero h1 {
-    font-size: 36px;
+/* HERO */
+.hero, .about-hero {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
 }
 
-.about-content {
-    padding: 40px;
+.hero h1, .about-hero h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero p, .about-hero p {
+    font-size: 18px;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #22c55e;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/* ABOUT */
+.about-section {
+    display: flex;
+    justify-content: center;
+    padding: 80px 20px;
+}
+
+.about-container {
     max-width: 800px;
-    margin: auto;
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.about-container h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-container p {
+    font-size: 18px;
+    line-height: 1.6;
 }
 
 /* FEATURES */
 .features {
-    padding: 50px;
     text-align: center;
+    padding: 60px 20px;
 }
 
 .feature-grid {
@@ -116,65 +85,42 @@ nav a {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-/* SUBJECTS */
-.subjects {
-    padding: 40px;
-    text-align: center;
-}
-
-/* FOOTER */
-footer {
-    background: #0f172a;
-    color: white;
-    padding: 20px;
-    text-align: center;
-} .icon {
-    font-size: 30px;
-    color: #22c55e;
-    margin-bottom: 10px;
-}
-.feature-card {
     transition: 0.3s;
 }
 
 .feature-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}@media (max-width: 768px) {
+}
 
+/* ICON */
+.icon {
+    font-size: 30px;
+    color: #22c55e;
+    margin-bottom: 10px;
+}
+
+/* SUBJECTS */
+.subjects {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* FOOTER */
+footer {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
     .feature-grid {
         grid-template-columns: 1fr;
     }
 
-    .about-hero h1 {
+    .hero h1, .about-hero h1 {
         font-size: 24px;
     }
-
-    .about-content {
-        padding: 20px;
-    }
-
-}
-.about-section {
-    background: #f8fafc;
-    padding: 80px 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.about-container {
-    max-width: 800px;
-    text-align: center;
-}
-
-.about-container h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.about-container p {
-    font-size: 18px;
-    line-height: 1.6;
 }
