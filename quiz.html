@@ -1,0 +1,34 @@
+<h1>Daily Quiz</h1>
+
+<p id="question">Loading...</p>
+
+<button onclick="checkAnswer(0)">A</button>
+<button onclick="checkAnswer(1)">B</button>
+<button onclick="checkAnswer(2)">C</button>
+<button onclick="checkAnswer(3)">D</button>
+
+<p id="result"></p>
+
+<script>
+
+const quiz = [
+{
+    q: "Which nerve is blocked in paravertebral anesthesia?",
+    options: ["T10", "T13-L2", "L4", "S1"],
+    answer: 1
+}
+];
+
+let current = 0;
+
+document.getElementById("question").innerText = quiz[0].q;
+
+function checkAnswer(i){
+    if(i === quiz[current].answer){
+        document.getElementById("result").innerText = "✅ Correct";
+    } else {
+        document.getElementById("result").innerText = "❌ Wrong";
+    }
+}
+
+</script>
