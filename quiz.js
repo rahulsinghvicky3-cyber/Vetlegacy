@@ -109,3 +109,16 @@ function nextQuestion(){
 }
 
 loadQuestion();
+function saveScore(){
+    let scores = JSON.parse(localStorage.getItem("scores")) || [];
+    scores.push(score);
+    localStorage.setItem("scores", JSON.stringify(scores));
+}
+
+function showLeaderboard(){
+    let scores = JSON.parse(localStorage.getItem("scores")) || [];
+    scores.sort((a,b) => b-a);
+
+    let top = scores.slice(0,5);
+    scoreEl.innerHTML += "<br>Top Scores: " + top.join(", ");
+}
