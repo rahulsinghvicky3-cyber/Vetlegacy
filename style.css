@@ -157,3 +157,24 @@ footer {
     }
 
 }
+.about-section {
+    background: #f8fafc;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.about-container {
+    max-width: 800px;
+    text-align: center;
+}
+
+.about-container h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-container p {
+    font-size: 18px;
+    line-height: 1.6;
+}
