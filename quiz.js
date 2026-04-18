@@ -1,51 +1,90 @@
-const quizData = [
-    {
-        question: "Which nerve is blocked in paravertebral anesthesia?",
-        options: ["T10", "T13-L2", "L4", "S1"],
-        correct: 1
-    },
-    {
-        question: "Normal body temperature of cow is?",
-        options: ["36°C", "38.5°C", "40°C", "42°C"],
-        correct: 1
-    },
-    {
-        question: "Which vitamin is synthesized in rumen?",
-        options: ["Vitamin C", "Vitamin B complex", "Vitamin D", "Vitamin A"],
-        correct: 1
-    }
-];
+let quizData = {
+    easy: [
+        {
+            question: "Normal body temperature of cow?",
+            options: ["36°C", "38.5°C", "40°C", "42°C"],
+            correct: 1
+        }
+    ],
+    medium: [
+        {
+            question: "Which nerve is blocked in paravertebral anesthesia?",
+            options: ["T10", "T13-L2", "L4", "S1"],
+            correct: 1
+        }
+    ],
+    hard: [
+        {
+            question: "Which vitamin is synthesized in rumen?",
+            options: ["Vitamin C", "Vitamin B complex", "Vitamin D", "Vitamin A"],
+            correct: 1
+        }
+    ]
+};
 
 let current = 0;
 let score = 0;
+let time = 15;
+let timer;
 
 const questionEl = document.getElementById("question");
 const optionsEl = document.getElementById("options");
 const nextBtn = document.getElementById("nextBtn");
 const scoreEl = document.getElementById("score");
+const timerEl = document.getElementById("timer");
+const difficultyEl = document.getElementById("difficulty");
 
-function loadQuestion() {
-    const q = quizData[current];
+let currentQuiz = quizData[difficultyEl.value];
+
+difficultyEl.addEventListener("change", () => {
+    current = 0;
+    score = 0;
+    currentQuiz = quizData[difficultyEl.value];
+    loadQuestion();
+});
+
+function startTimer(){
+    time = 15;
+    timerEl.innerText = "⏱ " + time;
+
+    timer = setInterval(() => {
+        time--;
+        timerEl.innerText = "⏱ " + time;
+
+        if(time === 0){
+            clearInterval(timer);
+            nextQuestion();
+        }
+    }, 1000);
+}
+
+function loadQuestion(){
+    clearInterval(timer);
+    startTimer();
+
+    const q = currentQuiz[current];
     questionEl.innerText = q.question;
     optionsEl.innerHTML = "";
 
-    q.options.forEach((opt, index) => {
+    q.options.forEach((opt, i) => {
         const btn = document.createElement("button");
         btn.innerText = opt;
-        btn.onclick = () => checkAnswer(index, btn);
+        btn.onclick = () => checkAnswer(i, btn);
         optionsEl.appendChild(btn);
     });
 
     nextBtn.style.display = "none";
 }
 
-function checkAnswer(index, btn) {
-    const correct = quizData[current].correct;
+function checkAnswer(i, btn){
+    clearInterval(timer);
+
+    const correct = currentQuiz[current].correct;
     const buttons = optionsEl.querySelectorAll("button");
 
     buttons.forEach(b => b.disabled = true);
 
-    if(index === correct){
+    if(i === correct){
         btn.classList.add("correct");
         score++;
     } else {
@@ -56,16 +95,16 @@ function checkAnswer(index, btn) {
     nextBtn.style.display = "block";
 }
 
-function nextQuestion() {
+function nextQuestion(){
     current++;
 
-    if(current < quizData.length){
+    if(current < currentQuiz.length){
         loadQuestion();
     } else {
         questionEl.innerText = "Quiz Completed 🎉";
         optionsEl.innerHTML = "";
         nextBtn.style.display = "none";
-        scoreEl.innerText = "Your Score: " + score + "/" + quizData.length;
+        scoreEl.innerText = "Score: " + score;
     }
 }
 
