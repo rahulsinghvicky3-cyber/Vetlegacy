@@ -312,3 +312,48 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* QUIZ TOP BAR IMPROVEMENT */
+.quiz-top select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background: white;
+    font-weight: 500;
+}
+
+/* OPTIONS BUTTON IMPROVED */
+.options button {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* DISABLED STATE */
+.options button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* CORRECT / WRONG ANIMATION */
+.correct {
+    background: #22c55e !important;
+    color: white;
+    transform: scale(1.02);
+}
+
+.wrong {
+    background: #ef4444 !important;
+    color: white;
+    transform: scale(1.02);
+}
+
+/* NEXT BUTTON CENTER */
+#nextBtn {
+    margin-top: 20px;
+}
+
+/* SCORE TEXT */
+#score {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
