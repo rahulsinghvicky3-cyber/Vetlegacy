@@ -9,35 +9,44 @@
 
 <body>
 
+<!-- 🔷 NAVBAR -->
 <header class="navbar">
-    <h2>VetLegacy 🐾</h2>
+    <div class="nav-container">
+        <h2 class="logo">VetLegacy 🐾</h2>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="test.html" class="active">Test Series</a>
+        </nav>
+    </div>
 </header>
 
+<!-- 🔷 TEST SECTION -->
 <section class="test-section">
 
-    <h2>Free Mock Tests</h2>
+    <h2 class="section-title">Free Mock Tests</h2>
 
     <div class="test-grid">
 
         <!-- ✅ MOCK TEST 1 -->
         <div class="test-card">
             <h3>Mock Test 1</h3>
-            <p>100 Questions • Timer • Explanation</p>
-            <a href="quiz.html?test=1">Start Test</a>
+            <p>✔ 100 Questions<br>✔ Timer<br>✔ Explanation</p>
+            <a href="quiz.html?test=1" class="btn">Start Test</a>
         </div>
 
         <!-- ❌ MOCK TEST 2 -->
         <div class="test-card disabled">
             <h3>Mock Test 2</h3>
-            <p>Coming Soon</p>
-            <button disabled>Locked</button>
+            <p>🚧 Coming Soon</p>
+            <button class="btn disabled-btn" disabled>Locked</button>
         </div>
 
-        <!-- 🔥 PAID -->
+        <!-- 🔥 PAID TEST -->
         <div class="test-card premium">
-            <h3>Paid VO Test Series</h3>
-            <p>Advanced ARS Level</p>
-            <button class="premium-btn">Unlock</button>
+            <h3>🔥 Paid VO Test Series</h3>
+            <p>Advanced ARS Level<br>Detailed Analysis</p>
+            <button class="btn premium-btn">Unlock</button>
         </div>
 
     </div>
