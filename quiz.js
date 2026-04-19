@@ -5,22 +5,22 @@
             question: "Which hormone regulates milk ejection?",
             options: ["Prolactin", "Oxytocin", "Estrogen", "Progesterone"],
             correct: 1,
-            explanation: "Oxytocin causes contraction of myoepithelial cells leading to milk ejection."
+            explanation: "Oxytocin causes milk let-down."
         },
         {
             question: "Gestation period of cow?",
             options: ["260", "280", "300", "320"],
             correct: 1,
-            explanation: "Average gestation period of cow is about 280 days."
+            explanation: "Cow gestation period is about 280 days."
         },
         {
-            question: "Rumen pH range?",
+            question: "Normal rumen pH?",
             options: ["4–5", "5.5–7", "7–8", "8–9"],
             correct: 1,
-            explanation: "Normal rumen pH ranges from 5.5 to 7 depending on diet."
+            explanation: "Normal rumen pH is 5.5–7."
         },
 
-        // 👉 AUTO 100 QUESTIONS
+        // AUTO 100
         ...Array.from({ length: 97 }, (_, i) => ({
             question: `Veterinary Question ${i + 4}?`,
             options: ["Option A", "Option B", "Option C", "Option D"],
@@ -29,12 +29,5 @@
         }))
     ],
 
-    test2: [
-        {
-            question: "Test 2 coming soon",
-            options: ["A", "B", "C", "D"],
-            correct: 0,
-            explanation: "More questions will be added soon."
-        }
-    ]
+    test2: [] // EMPTY
 };
