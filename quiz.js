@@ -129,4 +129,36 @@ function nextQuestion() {
 }
 
 /* START */
-loadQuestion();
+ function loadQuestion() {
+
+    // ❗ HANDLE EMPTY LEVEL
+    if (!currentQuiz || currentQuiz.length === 0) {
+        questionEl.innerText = "No questions available for this level ❌";
+        optionsEl.innerHTML = "";
+        nextBtn.style.display = "none";
+        return;
+    }
+
+    // ❗ HANDLE END SAFELY
+    if (current >= currentQuiz.length) {
+        finishQuiz();
+        return;
+    }
+
+    clearInterval(timer);
+    startTimer();
+
+    const q = currentQuiz[current];
+
+    questionEl.innerText = q.question;
+    optionsEl.innerHTML = "";
+
+    q.options.forEach((opt, i) => {
+        const btn = document.createElement("button");
+        btn.innerText = opt;
+        btn.onclick = () => checkAnswer(i, btn);
+        optionsEl.appendChild(btn);
+    });
+
+    nextBtn.style.display = "none";
+}
