@@ -120,3 +120,4 @@ function finishQuiz() {
 if (currentQuiz.length > 0) {
     loadQuestion();
 }
+questionEl.innerText = q.question;
