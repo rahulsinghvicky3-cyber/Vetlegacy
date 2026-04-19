@@ -1,5 +1,4 @@
- 
-/* ------------------ YOUR QUESTIONS ------------------ */
+ /* ------------------ YOUR QUESTIONS ------------------ */
 let quizData = {
     easy: [],
     medium: [],
@@ -30,8 +29,6 @@ let quizData = {
             options: ["Diffuse", "Cotyledonary", "Zonary", "Discoidal"],
             correct: 1
         }
-
-        // 👉 ADD rest of your questions here (keep format same)
 
     ]
 };
@@ -75,12 +72,28 @@ function startTimer() {
     }, 1000);
 }
 
-/* LOAD QUESTION */
+/* LOAD QUESTION (FINAL CLEAN VERSION) */
 function loadQuestion() {
+
+    // EMPTY CHECK
+    if (!currentQuiz || currentQuiz.length === 0) {
+        questionEl.innerText = "No questions available ❌";
+        optionsEl.innerHTML = "";
+        nextBtn.style.display = "none";
+        return;
+    }
+
+    // END CHECK
+    if (current >= currentQuiz.length) {
+        finishQuiz();
+        return;
+    }
+
     clearInterval(timer);
     startTimer();
 
     const q = currentQuiz[current];
+
     questionEl.innerText = q.question;
     optionsEl.innerHTML = "";
 
@@ -117,48 +130,18 @@ function checkAnswer(i, btn) {
 /* NEXT QUESTION */
 function nextQuestion() {
     current++;
+    loadQuestion();
+}
 
-    if (current < currentQuiz.length) {
-        loadQuestion();
-    } else {
-        questionEl.innerText = "Quiz Completed 🎉";
-        optionsEl.innerHTML = "";
-        nextBtn.style.display = "none";
-        scoreEl.innerText = "Score: " + score + "/" + currentQuiz.length;
-    }
+/* FINISH */
+function finishQuiz() {
+    clearInterval(timer);
+
+    questionEl.innerText = "Quiz Completed 🎉";
+    optionsEl.innerHTML = "";
+    nextBtn.style.display = "none";
+    scoreEl.innerText = "Score: " + score + "/" + currentQuiz.length;
 }
 
 /* START */
- function loadQuestion() {
-
-    // ❗ HANDLE EMPTY LEVEL
-    if (!currentQuiz || currentQuiz.length === 0) {
-        questionEl.innerText = "No questions available for this level ❌";
-        optionsEl.innerHTML = "";
-        nextBtn.style.display = "none";
-        return;
-    }
-
-    // ❗ HANDLE END SAFELY
-    if (current >= currentQuiz.length) {
-        finishQuiz();
-        return;
-    }
-
-    clearInterval(timer);
-    startTimer();
-
-    const q = currentQuiz[current];
-
-    questionEl.innerText = q.question;
-    optionsEl.innerHTML = "";
-
-    q.options.forEach((opt, i) => {
-        const btn = document.createElement("button");
-        btn.innerText = opt;
-        btn.onclick = () => checkAnswer(i, btn);
-        optionsEl.appendChild(btn);
-    });
-
-    nextBtn.style.display = "none";
-}
+loadQuestion();
