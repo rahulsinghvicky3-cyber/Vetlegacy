@@ -1,4 +1,4 @@
-let quizData = {
+ let quizData = {
 
   test1: [
 
@@ -362,7 +362,8 @@ let quizData = {
   options: ["Roughage", "Concentrate", "Mineral", "Vitamin"],
   correct: 1,
   explanation: "Concentrates are energy-rich."
-} {
+},
+ {
   question: "Dry period in dairy cow should be:",
   options: ["30 days", "45 days", "60 days", "90 days"],
   correct: 2,
@@ -596,3 +597,14 @@ let quizData = {
   correct: 1,
   explanation: "Milk is rich in calcium."
 }
+
+  ]
+
+};
+let seen = new Set();
+quizData.test1 = quizData.test1.filter(q => {
+  if (seen.has(q.question)) return false;
+  seen.add(q.question);
+  return true;
+});
+console.log(quizData.test1.length);
