@@ -9,42 +9,28 @@
 
 <body>
 
-<!-- NAVBAR -->
 <header class="navbar">
     <h2>VetLegacy Quiz 🧠</h2>
 </header>
 
-<!-- QUIZ -->
 <section class="quiz-container">
 
-    <!-- TOP BAR -->
     <div class="quiz-top">
-        <select id="difficulty">
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard" selected>Hard</option>
-        </select>
-
         <p id="timer">⏱ 15</p>
     </div>
 
-    <!-- QUESTION -->
     <h2 id="question">Loading...</h2>
 
-    <!-- OPTIONS -->
-    <div id="options" class="options"></div>
+    <div id="options"></div>
 
-    <!-- NEXT BUTTON -->
     <button id="nextBtn" class="btn" onclick="nextQuestion()" style="display:none;">
         Next Question
     </button>
 
-    <!-- SCORE -->
     <p id="score"></p>
 
 </section>
 
-<!-- SCRIPT -->
 <script src="quiz.js"></script>
 
 </body>
