@@ -7,41 +7,45 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <!-- ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- SEO (IMPORTANT) -->
+    <meta name="description" content="VetLegacy - Veterinary learning platform for ARS, BVSc, MVSc and VO preparation.">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- 🔷 NAVBAR -->
 <header class="navbar">
     <div class="nav-container">
         <h2 class="logo">VetLegacy 🐾</h2>
 
         <nav>
-            <a href="index.html">Home</a>
+            <a href="index.html" class="active">Home</a>
             <a href="about.html">About</a>
             <a href="notes.html">Notes</a>
             <a href="#">Videos</a>
-            <a href="test.html">Test Series</a> <!-- ✅ FIXED -->
+            <a href="test.html">Test Series</a>
             <a href="#">Courses</a>
-            <a href="contact.html">Contact</a> <!-- ✅ FIXED -->
+            <a href="contact.html">Contact</a>
         </nav>
     </div>
 </header>
 
-<!-- HERO -->
+<!-- 🔷 HERO -->
 <section class="hero fade-up">
     <h1>Where Veterinary Knowledge Becomes Understanding</h1>
 
     <p>
-        Stop memorizing. Start understanding.  
+        Stop memorizing. Start understanding.<br>
         Concept-based learning + ARS-level preparation.
     </p>
 
     <a href="notes.html" class="btn">Start Learning</a>
 </section>
 
-<!-- FEATURES -->
+<!-- 🔷 FEATURES -->
 <section class="features fade-up">
 
     <h2>Why VetLegacy?</h2>
@@ -70,33 +74,36 @@
 
 </section>
 
-<!-- CTA -->
+<!-- 🔷 CTA -->
 <section class="cta fade-up">
-    <h2>START LEARNING</h2>
-    <p>BVSc | MVSc | PhD Resources | VO PREP</p>
+    <h2>Start Learning Today</h2>
+    <p>BVSc | MVSc | PhD | Veterinary Officer Preparation</p>
 
-    <a href="notes.html" class="btn">Start Learning</a>
+    <a href="test.html" class="btn">Start Mock Test</a>
 </section>
 
-<!-- FOOTER -->
+<!-- 🔷 FOOTER -->
 <footer>
-    <p>© 2026 VetLegacy</p>
+    <p>© 2026 VetLegacy | Built for Veterinary Excellence</p>
 </footer>
 
-<!-- ANIMATION SCRIPT -->
+<!-- 🔷 ANIMATION SCRIPT -->
 <script>
 const elements = document.querySelectorAll('.fade-up');
 
-window.addEventListener('scroll', () => {
+function revealOnScroll() {
     elements.forEach(el => {
         const position = el.getBoundingClientRect().top;
         const screenHeight = window.innerHeight;
 
-        if(position < screenHeight - 100){
+        if (position < screenHeight - 100) {
             el.classList.add('active');
         }
     });
-});
+}
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
 </script>
 
 </body>
