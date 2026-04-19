@@ -1,62 +1,68 @@
- /* ------------------ YOUR QUESTIONS ------------------ */
-let quizData = {
-    easy: [],
-    medium: [],
-    hard: [
+ /* -------- GET TEST TYPE -------- */
+const urlParams = new URLSearchParams(window.location.search);
+const testType = urlParams.get("test");
 
+/* -------- QUESTION BANK -------- */
+let quizData = {
+
+    test1: [
+        // 👉 ADD YOUR 100 QUESTIONS HERE
         {
-            question: "Which hormone primarily regulates milk ejection reflex?",
+            question: "Which hormone regulates milk ejection?",
             options: ["Prolactin", "Oxytocin", "Estrogen", "Progesterone"],
             correct: 1
         },
         {
-            question: "Which VFA is glucogenic in ruminants?",
-            options: ["Acetate", "Butyrate", "Propionate", "Valerate"],
-            correct: 2
-        },
-        {
-            question: "Milk fever is due to deficiency of?",
-            options: ["Magnesium", "Calcium", "Phosphorus", "Iron"],
+            question: "Gestation period of cow?",
+            options: ["260", "280", "300", "320"],
             correct: 1
         },
+
+        // 🔥 COPY BELOW FORMAT TO ADD MORE
+        // Just duplicate and edit
+
         {
-            question: "Ketosis occurs due to deficiency of?",
-            options: ["Protein", "Energy", "Minerals", "Water"],
-            correct: 1
-        },
-        {
-            question: "Placenta type in cow?",
-            options: ["Diffuse", "Cotyledonary", "Zonary", "Discoidal"],
+            question: "Rumen pH range?",
+            options: ["4–5", "5.5–7", "7–8", "8–9"],
             correct: 1
         }
 
+        // 👉 Continue till 100 questions
+    ],
+
+    test2: [
+        {
+            question: "Test 2 coming soon",
+            options: ["A", "B", "C", "D"],
+            correct: 0
+        }
     ]
+
 };
 
-/* ------------------ QUIZ ENGINE ------------------ */
+/* -------- SELECT TEST -------- */
+let currentQuiz = [];
 
+if (testType === "1") {
+    currentQuiz = quizData.test1;
+} else {
+    currentQuiz = quizData.test2;
+}
+
+/* -------- VARIABLES -------- */
 let current = 0;
 let score = 0;
 let time = 15;
 let timer;
 
+/* -------- ELEMENTS -------- */
 const questionEl = document.getElementById("question");
 const optionsEl = document.getElementById("options");
 const nextBtn = document.getElementById("nextBtn");
 const scoreEl = document.getElementById("score");
 const timerEl = document.getElementById("timer");
-const difficultyEl = document.getElementById("difficulty");
 
-let currentQuiz = quizData["hard"]; // default
-
-difficultyEl.addEventListener("change", () => {
-    current = 0;
-    score = 0;
-    currentQuiz = quizData[difficultyEl.value];
-    loadQuestion();
-});
-
-/* TIMER */
+/* -------- TIMER -------- */
 function startTimer() {
     time = 15;
     timerEl.innerText = "⏱ " + time;
@@ -72,18 +78,14 @@ function startTimer() {
     }, 1000);
 }
 
-/* LOAD QUESTION (FINAL CLEAN VERSION) */
+/* -------- LOAD QUESTION -------- */
 function loadQuestion() {
 
-    // EMPTY CHECK
     if (!currentQuiz || currentQuiz.length === 0) {
         questionEl.innerText = "No questions available ❌";
-        optionsEl.innerHTML = "";
-        nextBtn.style.display = "none";
         return;
     }
 
-    // END CHECK
     if (current >= currentQuiz.length) {
         finishQuiz();
         return;
@@ -107,7 +109,7 @@ function loadQuestion() {
     nextBtn.style.display = "none";
 }
 
-/* CHECK ANSWER */
+/* -------- CHECK ANSWER -------- */
 function checkAnswer(i, btn) {
     clearInterval(timer);
 
@@ -117,31 +119,30 @@ function checkAnswer(i, btn) {
     buttons.forEach(b => b.disabled = true);
 
     if (i === correct) {
-        btn.classList.add("correct");
+        btn.style.background = "green";
         score++;
     } else {
-        btn.classList.add("wrong");
-        buttons[correct].classList.add("correct");
+        btn.style.background = "red";
+        buttons[correct].style.background = "green";
     }
 
     nextBtn.style.display = "block";
 }
 
-/* NEXT QUESTION */
+/* -------- NEXT -------- */
 function nextQuestion() {
     current++;
     loadQuestion();
 }
 
-/* FINISH */
+/* -------- FINISH -------- */
 function finishQuiz() {
     clearInterval(timer);
-
     questionEl.innerText = "Quiz Completed 🎉";
     optionsEl.innerHTML = "";
     nextBtn.style.display = "none";
     scoreEl.innerText = "Score: " + score + "/" + currentQuiz.length;
 }
 
-/* START */
+/* -------- START -------- */
 loadQuestion();
