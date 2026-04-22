@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - VetLegacy</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="nav-container">
+        <h2 class="logo">VetLegacy 🐾</h2>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="notes.html">Notes</a>
+            <a href="test.html">Test Series</a>
+            <a href="courses.html" class="active">Courses</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero fade-up">
+    <h1>Master Veterinary Exams with Structured Courses</h1>
+    <p>From BVSc basics to ARS-level preparation — everything in one place</p>
+</section>
+
+<!-- COURSES -->
+<section class="features fade-up">
+
+    <h2>Our Courses</h2>
+
+    <div class="feature-grid">
+
+        <!-- BVSc -->
+        <div class="feature-card">
+            <i class="fas fa-book-medical icon"></i>
+            <h3>BVSc Course</h3>
+            <p>Complete subject-wise concepts, notes & MCQs for veterinary students.</p>
+            <a href="#" class="btn">Explore</a>
+        </div>
+
+        <!-- ICAR PG -->
+        <div class="feature-card">
+            <i class="fas fa-graduation-cap icon"></i>
+            <h3>ICAR PG</h3>
+            <p>High-yield preparation with PYQs, mock tests & revision notes.</p>
+            <a href="#" class="btn">Explore</a>
+        </div>
+
+        <!-- ICAR PhD -->
+        <div class="feature-card">
+            <i class="fas fa-microscope icon"></i>
+            <h3>ICAR PhD</h3>
+            <p>Advanced level preparation for research entrance exams.</p>
+            <a href="#" class="btn">Explore</a>
+        </div>
+
+        <!-- VO PREP -->
+        <div class="feature-card">
+            <i class="fas fa-user-doctor icon"></i>
+            <h3>VO Preparation</h3>
+            <p>State Veterinary Officer exam prep with mocks & strategy.</p>
+            <a href="#" class="btn">Explore</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta fade-up">
+    <h2>Start Your Preparation Today 🚀</h2>
+    <p>Join VetLegacy and build your veterinary career</p>
+    <a href="test.html" class="btn">Start Mock Test</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 VetLegacy</p>
+</footer>
+
+<!-- ANIMATION -->
+<script>
+const elements = document.querySelectorAll('.fade-up');
+
+function revealOnScroll() {
+    elements.forEach(el => {
+        const position = el.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+
+        if (position < screenHeight - 100) {
+            el.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+</script>
+
+</body>
+</html>
