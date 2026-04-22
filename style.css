@@ -37,9 +37,9 @@ a {
 .logo {
     font-size: 22px;
     font-weight: bold;
-    letter-spacing: 0.5px;
 }
 
+/* NAV LINKS */
 .navbar nav a {
     color: #e2e8f0;
     margin-left: 22px;
@@ -48,7 +48,7 @@ a {
     transition: 0.3s;
 }
 
-/* NAV HOVER UNDERLINE */
+/* UNDERLINE EFFECT */
 .navbar nav a::after {
     content: "";
     position: absolute;
@@ -85,6 +85,15 @@ section {
     border-radius: 0 0 30px 30px;
 }
 
+/* 🔥 LOGO FIX (IMPORTANT) */
+.hero-logo {
+    width: 120px;
+    margin: 0 auto 20px;
+    display: block;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
+}
+
+/* TEXT */
 .hero h1 {
     font-size: 40px;
     margin-bottom: 15px;
@@ -175,7 +184,6 @@ section {
 
 #timer {
     color: #ef4444;
-    font-size: 16px;
 }
 
 #question {
@@ -184,7 +192,7 @@ section {
     font-weight: 600;
 }
 
-/* ===== OPTIONS ===== */
+/* OPTIONS */
 #options button {
     display: block;
     width: 100%;
@@ -195,8 +203,6 @@ section {
     border-radius: 10px;
     cursor: pointer;
     transition: 0.25s;
-    font-size: 15px;
-    font-weight: 500;
 }
 
 #options button:hover {
@@ -212,13 +218,6 @@ section {
 .wrong {
     background: #ef4444 !important;
     color: white;
-}
-
-/* ===== NEXT BUTTON ===== */
-#nextBtn {
-    width: 100%;
-    padding: 13px;
-    margin-top: 20px;
 }
 
 /* ===== TEST PAGE ===== */
@@ -254,7 +253,7 @@ section {
     transform: translateY(-8px);
 }
 
-/* Colored borders */
+/* BORDER COLORS */
 .contact-card:nth-child(1) { border-left: 5px solid #25D366; }
 .contact-card:nth-child(2) { border-left: 5px solid #0088cc; }
 .contact-card:nth-child(3) { border-left: 5px solid #ea4335; }
@@ -262,11 +261,7 @@ section {
 
 /* BUTTON COLORS */
 .whatsapp { background: #25D366; }
-.whatsapp:hover { background: #1ebe5d; }
-
 .telegram { background: #0088cc; }
-.telegram:hover { background: #0077b5; }
-
 .email { background: #ea4335; }
 .instagram { background: linear-gradient(45deg, #f43f5e, #9333ea); }
 
@@ -282,7 +277,6 @@ section {
     border-radius: 50%;
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     z-index: 1000;
-    transition: 0.3s;
 }
 
 .whatsapp-float:hover {
@@ -316,6 +310,7 @@ footer {
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
+
     .nav-container {
         flex-direction: column;
         gap: 10px;
@@ -329,9 +324,4 @@ footer {
     .test-grid {
         grid-template-columns: 1fr;
     }
-}
-.hero-logo {
-    width: 160px;
-    margin-bottom: 25px;
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
 }
