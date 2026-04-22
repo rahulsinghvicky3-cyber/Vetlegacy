@@ -270,3 +270,11 @@ footer {
 .whatsapp-float:hover {
     transform: scale(1.1);
 }
+.whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+.whatsapp:hover {
+    background: #1ebe5d;
+}
