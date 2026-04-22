@@ -330,3 +330,8 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+.hero-logo {
+    width: 160px;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+}
