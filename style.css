@@ -85,7 +85,12 @@ section {
     border-radius: 0 0 30px 30px;
 }
 
-/* 🔥 LOGO FIX (IMPORTANT) */
+.hero-content {
+    max-width: 700px;
+    margin: auto;
+}
+
+/* LOGO */
 .hero-logo {
     width: 120px;
     margin: 0 auto 20px;
@@ -105,10 +110,18 @@ section {
     font-size: 18px;
 }
 
+/* 🔥 HERO BUTTON FIX */
+.hero-buttons {
+    margin-top: 25px;
+}
+
+.hero-buttons .btn {
+    margin: 8px;
+}
+
 /* ===== BUTTON ===== */
 .btn {
     display: inline-block;
-    margin-top: 22px;
     padding: 13px 26px;
     background: #22c55e;
     color: white;
@@ -253,13 +266,12 @@ section {
     transform: translateY(-8px);
 }
 
-/* BORDER COLORS */
+/* PLATFORM COLORS */
 .contact-card:nth-child(1) { border-left: 5px solid #25D366; }
 .contact-card:nth-child(2) { border-left: 5px solid #0088cc; }
 .contact-card:nth-child(3) { border-left: 5px solid #ea4335; }
 .contact-card:nth-child(4) { border-left: 5px solid #E1306C; }
 
-/* BUTTON COLORS */
 .whatsapp { background: #25D366; }
 .telegram { background: #0088cc; }
 .email { background: #ea4335; }
@@ -318,6 +330,11 @@ footer {
 
     .hero h1 {
         font-size: 26px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
     }
 
     .feature-grid,
