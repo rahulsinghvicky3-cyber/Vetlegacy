@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -78,36 +78,120 @@
 
 <!-- 🎯 FILTER -->
 <div class="filter-buttons">
-    <button onclick="filterYear('all')" class="active">All</button>
-    <button onclick="filterYear('1st')">1st Year</button>
-    <button onclick="filterYear('2nd')">2nd Year</button>
-    <button onclick="filterYear('3rd')">3rd Year</button>
-    <button onclick="filterYear('4th')">4th Year</button>
-    <button onclick="filterYear('5th')">5th Year</button>
+    <button onclick="filterYear('all', this)" class="active">All</button>
+    <button onclick="filterYear('1st', this)">1st Year</button>
+    <button onclick="filterYear('2nd', this)">2nd Year</button>
+    <button onclick="filterYear('3rd', this)">3rd Year</button>
+    <button onclick="filterYear('4th', this)">4th Year</button>
+    <button onclick="filterYear('5th', this)">5th Year</button>
 </div>
 
 <!-- 📚 NOTES -->
 <section class="notes-grid" id="notesContainer">
 
-    <!-- SAMPLE SUBJECT -->
+    <!-- 1ST YEAR -->
     <div class="note-card" data-year="1st">
-        <h3>Anatomy</h3>
+        <h3>Veterinary Anatomy</h3>
         <a href="pdfs/anatomy.pdf" target="_blank" class="btn">View PDF</a>
     </div>
 
     <div class="note-card" data-year="1st">
-        <h3>Physiology</h3>
+        <h3>Veterinary Physiology</h3>
         <a href="pdfs/physiology.pdf" target="_blank" class="btn">View PDF</a>
     </div>
 
+    <div class="note-card" data-year="1st">
+        <h3>LPM</h3>
+        <a href="pdfs/lpm.pdf" target="_blank" class="btn">View PDF</a>
+    </div>
+
+    <div class="note-card" data-year="1st">
+        <h3>Poultry</h3>
+        <a href="pdfs/poultry.pdf" target="_blank" class="btn">View PDF</a>
+    </div>
+
+    <!-- 2ND YEAR -->
     <div class="note-card" data-year="2nd">
         <h3>Pathology</h3>
         <a href="pdfs/pathology.pdf" target="_blank" class="btn">View PDF</a>
     </div>
 
+    <div class="note-card" data-year="2nd">
+        <h3>Biochemistry</h3>
+        <a href="pdfs/biochemistry.pdf" target="_blank" class="btn">View PDF</a>
+    </div>
+
+    <div class="note-card" data-year="2nd">
+        <h3>Animal Nutrition</h3>
+        <a href="pdfs/nutrition.pdf" target="_blank" class="btn">View PDF</a>
+    </div>
+
+    <div class="note-card" data-year="2nd">
+        <h3>Genetics & Breeding</h3>
+        <a href="pdfs/genetics.pdf" target="_blank" class="btn">View PDF</a>
+    </div>
+
+    <div class="note-card" data-year="2nd">
+        <h3>Microbiology</h3>
+        <a href="pdfs/microbiology.pdf" target="_blank" class="btn">View PDF</a>
+    </div>
+
+    <!-- 3RD YEAR -->
     <div class="note-card" data-year="3rd">
         <h3>Pharmacology</h3>
         <a href="pdfs/pharmacology.pdf" target="_blank" class="btn">View PDF</a>
+    </div>
+
+    <div class="note-card" data-year="3rd">
+        <h3>Parasitology</h3>
+        <a href="pdfs/parasitology.pdf" target="_blank" class="btn">View PDF</a>
+    </div>
+
+    <div class="note-card" data-year="3rd">
+        <h3>VPH & Epidemiology</h3>
+        <a href="pdfs/vph.pdf" target="_blank" class="btn">View PDF</a>
+    </div>
+
+    <div class="note-card" data-year="3rd">
+        <h3>LPT</h3>
+        <a href="pdfs/lpt.pdf" target="_blank" class="btn">View PDF</a>
+    </div>
+
+    <div class="note-card" data-year="3rd">
+        <h3>Extension Education</h3>
+        <a href="pdfs/extension.pdf" target="_blank" class="btn">View PDF</a>
+    </div>
+
+    <!-- 4TH YEAR -->
+    <div class="note-card" data-year="4th">
+        <h3>Gynaecology</h3>
+        <a href="pdfs/gynae.pdf" target="_blank" class="btn">View PDF</a>
+    </div>
+
+    <div class="note-card" data-year="4th">
+        <h3>Surgery & Radiology</h3>
+        <a href="pdfs/surgery.pdf" target="_blank" class="btn">View PDF</a>
+    </div>
+
+    <div class="note-card" data-year="4th">
+        <h3>Veterinary Medicine</h3>
+        <a href="pdfs/medicine.pdf" target="_blank" class="btn">View PDF</a>
+    </div>
+
+    <!-- 5TH YEAR -->
+    <div class="note-card" data-year="5th">
+        <h3>Clinical Practice I</h3>
+        <a href="pdfs/clinical1.pdf" target="_blank" class="btn">View PDF</a>
+    </div>
+
+    <div class="note-card" data-year="5th">
+        <h3>Clinical Practice II</h3>
+        <a href="pdfs/clinical2.pdf" target="_blank" class="btn">View PDF</a>
+    </div>
+
+    <div class="note-card" data-year="5th">
+        <h3>Farm Practice</h3>
+        <a href="pdfs/farm.pdf" target="_blank" class="btn">View PDF</a>
     </div>
 
 </section>
@@ -126,9 +210,9 @@ searchInput.addEventListener("keyup", () => {
     });
 });
 
-function filterYear(year) {
-    document.querySelectorAll(".filter-buttons button").forEach(btn => btn.classList.remove("active"));
-    event.target.classList.add("active");
+function filterYear(year, btn) {
+    document.querySelectorAll(".filter-buttons button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
 
     notes.forEach(card => {
         if (year === "all" || card.dataset.year === year) {
