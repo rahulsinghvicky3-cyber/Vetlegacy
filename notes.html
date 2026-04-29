@@ -3,8 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notes - VetLegacy</title>
+    <title>VetLegacy Notes</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .search-box {
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .filter-buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filter-buttons button {
+            margin: 5px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background: #e2e8f0;
+        }
+
+        .filter-buttons button.active {
+            background: #22c55e;
+            color: white;
+        }
+
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .note-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .note-card h3 {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -12,158 +63,82 @@
 <header class="navbar">
     <div class="nav-container">
         <h2 class="logo">VetLegacy 🐾</h2>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="notes.html" class="active">Notes</a>
-            <a href="test.html">Test Series</a>
-            <a href="courses.html">Courses</a>
-        </nav>
     </div>
 </header>
 
 <section class="hero">
-    <h1>BVSc Notes (Year-wise)</h1>
-    <p>Structured learning for all subjects</p>
+    <h1>VetLegacy Notes</h1>
+    <p>Search • Filter • Study Smart</p>
 </section>
 
-<!-- ===== NOTES ===== -->
-<section class="features">
+<!-- 🔍 SEARCH -->
+<div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search subject...">
+</div>
 
-    <!-- 1ST YEAR -->
-    <h2>1st Year</h2>
-    <div class="feature-grid">
+<!-- 🎯 FILTER -->
+<div class="filter-buttons">
+    <button onclick="filterYear('all')" class="active">All</button>
+    <button onclick="filterYear('1st')">1st Year</button>
+    <button onclick="filterYear('2nd')">2nd Year</button>
+    <button onclick="filterYear('3rd')">3rd Year</button>
+    <button onclick="filterYear('4th')">4th Year</button>
+    <button onclick="filterYear('5th')">5th Year</button>
+</div>
 
-        <div class="feature-card">
-            <h3>Veterinary Anatomy</h3>
-            <a href="anatomy.html" class="btn">Open</a>
-        </div>
+<!-- 📚 NOTES -->
+<section class="notes-grid" id="notesContainer">
 
-        <div class="feature-card">
-            <h3>Veterinary Physiology</h3>
-            <a href="physiology.html" class="btn">Open</a>
-        </div>
-
-        <div class="feature-card">
-            <h3>LPM</h3>
-            <a href="lpm.html" class="btn">Open</a>
-        </div>
-
-        <div class="feature-card">
-            <h3>Poultry</h3>
-            <a href="poultry.html" class="btn">Open</a>
-        </div>
-
+    <!-- SAMPLE SUBJECT -->
+    <div class="note-card" data-year="1st">
+        <h3>Anatomy</h3>
+        <a href="pdfs/anatomy.pdf" target="_blank" class="btn">View PDF</a>
     </div>
 
-    <!-- 2ND YEAR -->
-    <h2>2nd Year</h2>
-    <div class="feature-grid">
-
-        <div class="feature-card">
-            <h3>Pathology</h3>
-            <a href="pathology.html" class="btn">Open</a>
-        </div>
-
-        <div class="feature-card">
-            <h3>Biochemistry</h3>
-            <a href="biochemistry.html" class="btn">Open</a>
-        </div>
-
-        <div class="feature-card">
-            <h3>Nutrition</h3>
-            <a href="nutrition.html" class="btn">Open</a>
-        </div>
-
-        <div class="feature-card">
-            <h3>Genetics</h3>
-            <a href="genetics.html" class="btn">Open</a>
-        </div>
-
-        <div class="feature-card">
-            <h3>Microbiology</h3>
-            <a href="microbiology.html" class="btn">Open</a>
-        </div>
-
+    <div class="note-card" data-year="1st">
+        <h3>Physiology</h3>
+        <a href="pdfs/physiology.pdf" target="_blank" class="btn">View PDF</a>
     </div>
 
-    <!-- 3RD YEAR -->
-    <h2>3rd Year</h2>
-    <div class="feature-grid">
-
-        <div class="feature-card">
-            <h3>Pharmacology</h3>
-            <a href="pharmacology.html" class="btn">Open</a>
-        </div>
-
-        <div class="feature-card">
-            <h3>Parasitology</h3>
-            <a href="parasitology.html" class="btn">Open</a>
-        </div>
-
-        <div class="feature-card">
-            <h3>VPH</h3>
-            <a href="vph.html" class="btn">Open</a>
-        </div>
-
-        <div class="feature-card">
-            <h3>LPT</h3>
-            <a href="lpt.html" class="btn">Open</a>
-        </div>
-
-        <div class="feature-card">
-            <h3>Extension</h3>
-            <a href="extension.html" class="btn">Open</a>
-        </div>
-
+    <div class="note-card" data-year="2nd">
+        <h3>Pathology</h3>
+        <a href="pdfs/pathology.pdf" target="_blank" class="btn">View PDF</a>
     </div>
 
-    <!-- 4TH YEAR -->
-    <h2>4th Year</h2>
-    <div class="feature-grid">
-
-        <div class="feature-card">
-            <h3>Gynaecology</h3>
-            <a href="gynae.html" class="btn">Open</a>
-        </div>
-
-        <div class="feature-card">
-            <h3>Surgery</h3>
-            <a href="surgery.html" class="btn">Open</a>
-        </div>
-
-        <div class="feature-card">
-            <h3>Medicine</h3>
-            <a href="medicine.html" class="btn">Open</a>
-        </div>
-
-    </div>
-
-    <!-- 5TH YEAR -->
-    <h2>5th Year</h2>
-    <div class="feature-grid">
-
-        <div class="feature-card">
-            <h3>Clinical Practice I</h3>
-            <a href="clinical1.html" class="btn">Open</a>
-        </div>
-
-        <div class="feature-card">
-            <h3>Clinical Practice II</h3>
-            <a href="clinical2.html" class="btn">Open</a>
-        </div>
-
-        <div class="feature-card">
-            <h3>Farm Practice</h3>
-            <a href="farm.html" class="btn">Open</a>
-        </div>
-
+    <div class="note-card" data-year="3rd">
+        <h3>Pharmacology</h3>
+        <a href="pdfs/pharmacology.pdf" target="_blank" class="btn">View PDF</a>
     </div>
 
 </section>
 
-<footer>
-    <p>© 2026 VetLegacy</p>
-</footer>
+<!-- SCRIPT -->
+<script>
+const searchInput = document.getElementById("searchInput");
+const notes = document.querySelectorAll(".note-card");
+
+searchInput.addEventListener("keyup", () => {
+    const value = searchInput.value.toLowerCase();
+
+    notes.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(value) ? "block" : "none";
+    });
+});
+
+function filterYear(year) {
+    document.querySelectorAll(".filter-buttons button").forEach(btn => btn.classList.remove("active"));
+    event.target.classList.add("active");
+
+    notes.forEach(card => {
+        if (year === "all" || card.dataset.year === year) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+</script>
 
 </body>
 </html>
